@@ -33,6 +33,18 @@ class AdminController extends Controller
     		$user->roles()->attach(Role::where('name','Faculty')->first());
     	}
 
+        if($request['role_lab']){
+            $user->roles()->attach(Role::where('name','Lab')->first());
+        }
+
+        if($request['role_clerical']){
+            $user->roles()->attach(Role::where('name','Clerical')->first());
+        }
+
+        if($request['role_account']){
+            $user->roles()->attach(Role::where('name','Account')->first());
+        }
+
     	Session::flash('success','Roles assigned successfully!!');
 
     	return redirect()->back();
