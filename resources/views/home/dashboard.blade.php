@@ -57,7 +57,7 @@
    <div class="col-sm-6 col-md-3">
     <a href="{{route('reception.dashboard')}}" class="btn btn-primary btn-lg btn-block" role="button">
     <div class="thumbnail">
-      <img src="images/reception.jpg" alt="..." height="50%" width="100%">
+      <img src="images/receptionist.jpg" alt="..." height="50%" width="100%">
       <div class="caption">
         <h3>Reception <span class="badge"></span></h3>
         <p></p>
@@ -70,7 +70,7 @@
    <div class="col-sm-6 col-md-3">
     <a href="{{route('ems.dashboard')}}" class="btn btn-primary btn-lg btn-block" role="button">
     <div class="thumbnail">
-      <img src="images/ems.png" alt="..." height="auto" width="100%">
+      <img src="images/employees.jpeg" alt="..." height="auto" width="100%">
       <div class="caption">
         <h3>EMS <span class="badge"></span></h3>
         <p></p>

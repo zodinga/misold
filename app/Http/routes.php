@@ -346,11 +346,11 @@ Route::group(['middlewareGroups' => ['web']], function () {
 
 	Route::get('ems/dashboard', ['as'=>'ems.dashboard','uses'=>'Ems\PagesController@getDashboard', 'middleware'=>'roles', 'roles'=>['Reception','Admin','Coordinator','Faculty']]);
 
-	Route::post('employee/mypage', ['as'=>'employee','uses'=>'emp\EmployeeController@index']);
-	Route::post('employee/detail', ['as'=>'detail','uses'=>'emp\EmployeeController@show']);
+	Route::post('employee/mypage', ['as'=>'employee','uses'=>'Ems\EmployeeController@index']);
+	Route::post('employee/detail', ['as'=>'detail','uses'=>'Ems\EmployeeController@show']);
 
-	Route::get('employee/mypage', ['as'=>'employee','uses'=>'emp\EmployeeController@index']);
-	Route::get('employee/detail', ['as'=>'detail','uses'=>'emp\EmployeeController@show']);
+	Route::get('employee/mypage', ['as'=>'employee','uses'=>'Ems\EmployeeController@index']);
+	Route::get('employee/detail', ['as'=>'detail','uses'=>'Ems\EmployeeController@show']);
 
 	
 	Route::get('ems/pages/employees/{id}',['as'=>'ems.pages.employees','uses'=>'Ems\PagesController@getStudents','middleware' => 'roles','roles' => ['Admin','Coordinator','Faculty','Reception']]);
@@ -366,16 +366,16 @@ Route::group(['middlewareGroups' => ['web']], function () {
 
  
 
-	Route::get('ems/documents/show/{id}',['uses' => 'ems\DocumentController@show','as'=>'ems.documents.show']);
-	Route::get('ems/documents/edit/{id}',['uses' => 'Ems\DocumentController@edit','as'=>'ems.documents.edit']);
-	Route::put('ems/documents/update/{id}',['as'=>'ems.documents.update','uses'=>'Ems\DocumentController@update']);
+	Route::get('ems/documents/show/{id}',['uses' => 'DocumentController@show','as'=>'ems.documents.show']);
+	Route::get('ems/documents/edit/{id}',['uses' => 'DocumentController@edit','as'=>'ems.documents.edit']);
+	Route::put('ems/documents/update/{id}',['as'=>'ems.documents.update','uses'=>'DocumentController@update']);
 	Route::post('ems/documents/save','DocumentController@saveDocument');
-	Route::get('ems/documents/destroy/{id}',['uses' => 'Ems\DocumentController@destroy','as'=>'ems.documents.destroy','middleware' => 'roles','roles' => ['Admin','Coordinator','Faculty','Reception']]);
-	Route::post('ems/documents/upload',['uses'=>'Ems\DocumentController@documentUpload','as'=>'ems.documents.upload']);
+	Route::get('ems/documents/destroy/{id}',['uses' => 'DocumentController@destroy','as'=>'ems.documents.destroy','middleware' => 'roles','roles' => ['Admin','Coordinator','Faculty','Reception']]);
+	Route::post('ems/documents/upload',['uses'=>'DocumentController@documentUpload','as'=>'ems.documents.upload']);
 
 
-	Route::post('ems/leave/show/{id}',['uses' => 'ems\LeaveController@leave','as'=>'ems.leave.show']);
-	Route::get('ems/leave/show/{id}',['uses' => 'ems\LeaveController@leave','as'=>'ems.leave.show']); 
+	Route::post('ems/leave/show/{id}',['uses' => 'Ems\LeaveController@leave','as'=>'ems.leave.show']);
+	Route::get('ems/leave/show/{id}',['uses' => 'Ems\LeaveController@leave','as'=>'ems.leave.show']);
 	Route::post('ems/leave/view/{id}',['as'=>'ems.leave.view','uses'=>'Ems\LeaveController@view']);
 	Route::get('ems/leave/view/{id}',['as'=>'ems.leave.view','uses'=>'Ems\LeaveController@view']);
 	Route::post('ems/leave/approve/{id}',['as'=>'ems.leave.approve','uses'=>'Ems\LeaveController@approve']);
@@ -392,8 +392,8 @@ Route::group(['middlewareGroups' => ['web']], function () {
 	Route::get('ems/leave/destroy/{id}',['uses' => 'Ems\LeaveController@destroy','as'=>'ems.leave.destroy','middleware' => 'roles','roles' => ['Admin','Coordinator','Faculty','Reception']]);
 	
 
-	Route::post('ems/outpass/show/{id}',['uses' => 'ems\OutpassController@leave','as'=>'ems.outpass.show']);
-	Route::get('ems/outpass/show/{id}',['uses' => 'ems\OutpassController@leave','as'=>'ems.outpass.show']); 
+	Route::post('ems/outpass/show/{id}',['uses' => 'Ems\OutpassController@leave','as'=>'ems.outpass.show']);
+	Route::get('ems/outpass/show/{id}',['uses' => 'Ems\OutpassController@leave','as'=>'ems.outpass.show']);
 	Route::post('ems/outpass/view/{id}',['as'=>'ems.outpass.view','uses'=>'Ems\OutpassController@view']);
 	Route::get('ems/outpass/view/{id}',['as'=>'ems.outpass.view','uses'=>'Ems\OutpassController@view']);
 	Route::post('ems/outpass/approve/{id}',['as'=>'ems.outpass.approve','uses'=>'Ems\OutpassController@approve']);
